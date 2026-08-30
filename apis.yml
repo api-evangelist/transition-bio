@@ -1,17 +1,38 @@
 aid: transition-bio
 name: Transition Bio
-description: 'Transition Bio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Transition Bio is a preclinical drug discovery company built on biomolecular condensate
+  science, operating as a joint spin-out of the University of Cambridge and Harvard University
+  with sites in Cambridge, Massachusetts and Cambridge, United Kingdom. The company combines
+  droplet-microfluidics high-throughput molecular screening with a machine learning engine to
+  identify and optimize small molecules that modulate intrinsically disordered proteins and the
+  condensates they form, an approach the company has described as its Condensomics platform.
+  It was seeded in November 2020 and closed a $50 million Series A in June 2022 led by Northpond
+  Ventures with Taiho Ventures, Bristol Myers Squibb and Magnetic Ventures participating, and in
+  November 2025 announced a collaboration with Voyager Therapeutics on small molecules targeting
+  TDP-43 in ALS and frontotemporal dementia. Transition Bio is a therapeutics developer rather
+  than a software or data vendor: it publishes no developer portal, no API documentation and no
+  machine-readable API contract on any host it controls.
 url: https://raw.githubusercontent.com/api-evangelist/transition-bio/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-08-30'
 modified: '2026-08-30'
+image: https://transitionbio.com/wp-content/uploads/2022/04/logo.png
 tags:
 - Company
+- Biotechnology
+- Drug Discovery
+- Life Sciences
+- Machine Learning
+- Artificial Intelligence
+- Microfluidics
+- Proteomics
+- Therapeutics
+- Neurodegeneration
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +41,56 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://transitionbio.com/
+- type: About
+  url: https://transitionbio.com/about-us/
+- type: Blog
+  url: https://transitionbio.com/news/
+- type: BlogRSS
+  url: https://transitionbio.com/feed/
+- type: Support
+  url: https://transitionbio.com/contact-us/
+- type: GitHubOrganization
+  url: https://github.com/transitionbio
+- type: LinkedIn
+  url: https://www.linkedin.com/company/transition-bio-inc/
+- type: Careers
+  url: https://transitionbio.com/careers/
+- type: Partners
+  url: https://transitionbio.com/collaborate/
+- type: LLMsTxt
+  url: llms/transition-bio-llms.txt
+- type: DomainSecurity
+  url: security/transition-bio-domain-security.yml
+x-enrichment:
+  date: '2026-08-30'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Transition Bio is a preclinical therapeutics developer whose product is drug candidates, not
+    software; its entire web presence is an 11-page WordPress marketing site with no developer
+    section, and every contract-discovery path (/openapi.json, /swagger.json, /api-docs, /graphql,
+    /llms.txt and all seven /.well-known/ paths) returned 404, while api./docs./developer.
+    transitionbio.com are wildcard DNS to the same shared host serving that marketing site.
+  evidence:
+  - url: https://transitionbio.com/openapi.json
+    status: 404
+  - url: https://transitionbio.com/swagger.json
+    status: 404
+  - url: https://transitionbio.com/api-docs
+    status: 404
+  - url: https://transitionbio.com/graphql
+    status: 404
+  - url: https://transitionbio.com/llms.txt
+    status: 404
+  - url: https://transitionbio.com/.well-known/agent-card.json
+    status: 404
+  - url: https://transitionbio.com/.well-known/api-catalog
+    status: 404
+  - url: https://transitionbio.com/
+    status: 200
+  checked: '2026-08-30'

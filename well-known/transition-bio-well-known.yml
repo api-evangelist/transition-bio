@@ -1,0 +1,35 @@
+generated: '2026-08-30'
+method: probed
+source: live HTTPS probes of /.well-known/* on every host in apis.yml
+note: >-
+  Every /.well-known/ path probed on transitionbio.com returned 404. No document was served, so
+  NO WellKnown, APICatalog or SecurityTxt pointer is wired into apis.yml — this file records a
+  verified absence, not a presence. api.transitionbio.com, docs.transitionbio.com and
+  developer.transitionbio.com were also checked and are wildcard DNS (all A records resolve to the
+  same shared-host IP 66.96.162.138 behind a *.transitionbio.com Let's Encrypt certificate) that
+  serve the same WordPress marketing site as the apex; they are not distinct API or docs hosts and
+  were therefore not probed as separate surfaces.
+hosts:
+- host: transitionbio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

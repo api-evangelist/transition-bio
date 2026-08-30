@@ -1,0 +1,25 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org/pypi/<name>/json, and the github.com/transitionbio
+  organization listing (GitHub API, 3 public repositories)
+package_count: 0
+official_sdk_count: 0
+packages: []
+note: >-
+  No first-party client library, SDK or CLI is published by Transition Bio on any registry. npm
+  search for "transitionbio" returned zero results; pypi.org returned 404 for transitionbio,
+  transition-bio and condensomics. The github.com/transitionbio organization holds three public
+  repositories and none of them is a client library: MolTrans (a fork of the academic
+  MolTrans drug-target-interaction model, BSD-3-Clause, last pushed 2022-07-15), fp5-public (a
+  Python research repository with train/eval/infer scripts and no packaging metadata — no
+  pyproject.toml on the default branch — last pushed 2026-05-07), and "git" (a two-file scratch
+  repository). No Packages or SDKs pointer is wired into apis.yml, because there is nothing to
+  point at.
+registries_checked:
+- registry: npm
+  result: no matching first-party package
+- registry: pypi
+  result: no matching first-party package
+- registry: github
+  result: 3 public repos, none a client library
